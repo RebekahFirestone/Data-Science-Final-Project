@@ -14,9 +14,3 @@ data_current_students_final.shape
 data_current_students_final.rename(columns = {"IMP_EST_HOUSEHOLD_INCOME_RANK":"est_household_income_rank"},inplace=True)
 data_current_students_final.rename(columns = {"IMP_LEADSOURCE_CODE":"leadsource_code"},inplace=True)
 data_current_students_final.rename(columns = {"IMP_MINORITY":"minority"},inplace=True)
-
-#normalizing data (used for feature selection but ultimately dropped)
-data_current_students_final["miles_norm"] = (data_current_students_final["IMP_ZIP_MILES_FROM_CAMPUS"]-data_current_students_final["IMP_ZIP_MILES_FROM_CAMPUS"].min()) / (data_current_students_final["IMP_ZIP_MILES_FROM_CAMPUS"].max()-data_current_students_final["IMP_ZIP_MILES_FROM_CAMPUS"].min())
-data_current_students_final["gpa_norm"] = (data_current_students_final["gpa_points"]-data_current_students_final["gpa_points"].min()) / (data_current_students_final["gpa_points"].max()-data_current_students_final["gpa_points"].min())
-data_current_students_final["income_rank_norm"] = (data_current_students_final["est_household_income_rank"]-data_current_students_final["est_household_income_rank"].min()) / (data_current_students_final["est_household_income_rank"].max()-data_current_students_final["est_household_income_rank"].min())
-data_current_students_final["zip_rank_norm"] = (data_current_students_final["IMP_ZIP_MEDIAN_INCOME_2"]-data_current_students_final["IMP_ZIP_MEDIAN_INCOME_2"].min()) / (data_current_students_final["IMP_ZIP_MEDIAN_INCOME_2"].max()-data_current_students_final["IMP_ZIP_MEDIAN_INCOME_2"].min())
